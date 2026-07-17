@@ -213,6 +213,17 @@ Unit-test: `src/modules/delivery/delivery.service.spec.ts:119`
 npm test          # unit-тесты
 ```
 
+> PASS src/modules/delivery/delivery.controller.spec.ts
+> PASS src/modules/delivery/delivery.service.spec.ts
+> PASS src/modules/delivery/providers/boxberry.provider.spec.ts
+> PASS src/modules/delivery/providers/cdek.provider.spec.ts
+
+Test Suites: 4 passed, 4 total
+Tests:       16 passed, 16 total
+Snapshots:   0 total
+Time:        0.531 s, estimated 1 s
+Ran all test suites.
+
 ---
 
 ## Что можно улучшить

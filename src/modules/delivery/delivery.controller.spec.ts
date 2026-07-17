@@ -1,10 +1,10 @@
 import { Test } from '@nestjs/testing';
-import { DeliveryController } from './delivery.controller.js';
-import { DeliveryService } from './delivery.service.js';
-import { DELIVERY_PROVIDERS_INJECT_KEY } from './providers/constants.js';
-import { MockCdekProvider } from './providers/cdek.provider.js';
-import { MockBoxberryProvider } from './providers/boxberry.provider.js';
-import { CalculateDeliveryDto } from './dto/calculate-delivery.dto.js';
+import { DeliveryController } from './delivery.controller';
+import { DeliveryService } from './delivery.service';
+import { DELIVERY_PROVIDERS_INJECT_KEY } from './providers/constants';
+import { MockCdekProvider } from './providers/cdek/cdek.provider';
+import { MockBoxberryProvider } from './providers/boxberry/boxberry.provider';
+import { CalculateDeliveryDto } from './dto/calculate-delivery.dto';
 
 describe('DeliveryController', () => {
   let controller: DeliveryController;

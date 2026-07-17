@@ -1,5 +1,5 @@
-import { MockBoxberryProvider } from './boxberry.provider.js';
-import { CalculateDeliveryDto } from '../dto/calculate-delivery.dto.js';
+import { MockBoxberryProvider } from './boxberry.provider';
+import { CalculateDeliveryDto } from '../../dto/calculate-delivery.dto';
 
 describe('MockBoxberryProvider', () => {
   const provider = new MockBoxberryProvider();

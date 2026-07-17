@@ -1,10 +1,11 @@
 import { Logger } from '@nestjs/common';
-import { DeliveryService } from './delivery.service.js';
-import { DeliveryProvider } from './interfaces/delivery-provider.interface.js';
-import { DeliveryOption } from './interfaces/delivery-option.interface.js';
-import { CalculateDeliveryDto } from './dto/calculate-delivery.dto.js';
+import { DeliveryService } from './delivery.service';
+import { DeliveryProvider } from './interfaces/delivery-provider.interface';
+import { DeliveryOption } from './interfaces/delivery-option.interface';
+import { CalculateDeliveryDto } from './dto/calculate-delivery.dto';
 
-jest.spyOn(Logger.prototype, 'error').mockImplementation(() => {});
+jest.spyOn(Logger.prototype, 'error').mockImplementation(() => {
+});
 
 describe('DeliveryService', () => {
   const request: CalculateDeliveryDto = {
@@ -119,7 +120,8 @@ describe('DeliveryService', () => {
   it('should skip provider that exceeds timeoutMs', async () => {
     const slow = createProvider(
       'slow',
-      new Promise<DeliveryOption[]>(() => {}),
+      new Promise<DeliveryOption[]>(() => {
+      }),
       10,
     );
     const fast = createProvider(

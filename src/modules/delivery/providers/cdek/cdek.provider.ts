@@ -1,6 +1,6 @@
-import { DeliveryProvider } from '../interfaces/delivery-provider.interface.js';
-import { CalculateDeliveryDto } from '../dto/calculate-delivery.dto.js';
-import { DeliveryOption } from '../interfaces/delivery-option.interface.js';
+import { DeliveryProvider } from '../../interfaces/delivery-provider.interface';
+import { CalculateDeliveryDto } from '../../dto/calculate-delivery.dto';
+import { DeliveryOption } from '../../interfaces/delivery-option.interface';
 
 export class MockCdekProvider implements DeliveryProvider {
   readonly id = 'cdek';

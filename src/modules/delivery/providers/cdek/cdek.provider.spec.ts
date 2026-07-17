@@ -1,5 +1,5 @@
-import { MockCdekProvider } from './cdek.provider.js';
-import { CalculateDeliveryDto } from '../dto/calculate-delivery.dto.js';
+import { MockCdekProvider } from './cdek.provider';
+import { CalculateDeliveryDto } from '../../dto/calculate-delivery.dto';
 
 describe('MockCdekProvider', () => {
   const provider = new MockCdekProvider();

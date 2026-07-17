@@ -1,11 +1,12 @@
 import { Body, Controller, Post } from '@nestjs/common';
-import { DeliveryService } from './delivery.service.js';
-import { CalculateDeliveryDto } from './dto/calculate-delivery.dto.js';
-import { CalculateDeliveryResponseDto } from './dto/delivery-option.dto.js';
+import { DeliveryService } from './delivery.service';
+import { CalculateDeliveryDto } from './dto/calculate-delivery.dto';
+import { CalculateDeliveryResponseDto } from './dto/delivery-option.dto';
 
 @Controller('delivery')
 export class DeliveryController {
-  constructor(private readonly deliveryService: DeliveryService) {}
+  constructor(private readonly deliveryService: DeliveryService) {
+  }
 
   @Post('calculate')
   async calculate(

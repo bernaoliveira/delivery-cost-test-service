@@ -1,9 +1,9 @@
 import { Module } from '@nestjs/common';
-import { DeliveryController } from './delivery.controller.js';
-import { DeliveryService } from './delivery.service.js';
-import { DELIVERY_PROVIDERS_INJECT_KEY } from './providers/constants.js';
-import { MockCdekProvider } from './providers/cdek.provider.js';
-import { MockBoxberryProvider } from './providers/boxberry.provider.js';
+import { DeliveryController } from './delivery.controller';
+import { DeliveryService } from './delivery.service';
+import { DELIVERY_PROVIDERS_INJECT_KEY } from './providers/constants';
+import { MockCdekProvider } from './providers/cdek/cdek.provider';
+import { MockBoxberryProvider } from './providers/boxberry/boxberry.provider';
 
 @Module({
   controllers: [DeliveryController],
@@ -15,4 +15,5 @@ import { MockBoxberryProvider } from './providers/boxberry.provider.js';
     },
   ],
 })
-export class DeliveryModule {}
+export class DeliveryModule {
+}
