@@ -19,7 +19,6 @@ export class MockCdekProvider implements DeliveryProvider {
         price,
         currency: 'RUB',
         estimatedDays: { min: 2, max: 4 },
-
       },
     ];
   }

@@ -11,12 +11,8 @@ import { MockBoxberryProvider } from './providers/boxberry.provider.js';
     DeliveryService,
     {
       provide: DELIVERY_PROVIDERS_INJECT_KEY,
-      useFactory: () => [
-        new MockCdekProvider(),
-        new MockBoxberryProvider(),
-      ],
+      useFactory: () => [new MockCdekProvider(), new MockBoxberryProvider()],
     },
   ],
 })
-export class DeliveryModule {
-}
+export class DeliveryModule {}

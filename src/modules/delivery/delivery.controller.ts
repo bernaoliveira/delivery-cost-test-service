@@ -5,8 +5,7 @@ import { CalculateDeliveryResponseDto } from './dto/delivery-option.dto.js';
 
 @Controller('delivery')
 export class DeliveryController {
-  constructor(private readonly deliveryService: DeliveryService) {
-  }
+  constructor(private readonly deliveryService: DeliveryService) {}
 
   @Post('calculate')
   async calculate(

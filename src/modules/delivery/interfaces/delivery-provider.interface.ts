@@ -6,5 +6,7 @@ export interface DeliveryProvider {
   readonly name: string;
   readonly timeoutMs: number;
 
-  calculate(calculateDeliveryDto: CalculateDeliveryDto): Promise<DeliveryOption[]>;
+  calculate(
+    calculateDeliveryDto: CalculateDeliveryDto,
+  ): Promise<DeliveryOption[]>;
 }

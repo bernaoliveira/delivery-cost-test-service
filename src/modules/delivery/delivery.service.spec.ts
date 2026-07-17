@@ -125,7 +125,13 @@ describe('DeliveryService', () => {
     const fast = createProvider(
       'fast',
       Promise.resolve([
-        { providerId: 'fast', providerName: 'Fast', price: 50, currency: 'RUB', estimatedDays: { min: 1, max: 1 } },
+        {
+          providerId: 'fast',
+          providerName: 'Fast',
+          price: 50,
+          currency: 'RUB',
+          estimatedDays: { min: 1, max: 1 },
+        },
       ]),
     );
 

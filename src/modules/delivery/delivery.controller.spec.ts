@@ -16,7 +16,10 @@ describe('DeliveryController', () => {
         DeliveryService,
         {
           provide: DELIVERY_PROVIDERS_INJECT_KEY,
-          useFactory: () => [new MockCdekProvider(), new MockBoxberryProvider()],
+          useFactory: () => [
+            new MockCdekProvider(),
+            new MockBoxberryProvider(),
+          ],
         },
       ],
     }).compile();
@@ -44,8 +47,8 @@ describe('DeliveryController', () => {
     expect(result.options.find((o) => o.providerId === 'cdek')?.price).toBe(
       200,
     );
-    expect(
-      result.options.find((o) => o.providerId === 'boxberry')?.price,
-    ).toBe(300);
+    expect(result.options.find((o) => o.providerId === 'boxberry')?.price).toBe(
+      300,
+    );
   });
 });

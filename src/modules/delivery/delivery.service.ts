@@ -13,9 +13,13 @@ export class DeliveryService {
     private readonly providers: DeliveryProvider[],
   ) {}
 
-  async calculateForAllProviders(calculateDeliveryDto: CalculateDeliveryDto): Promise<DeliveryOption[]> {
+  async calculateForAllProviders(
+    calculateDeliveryDto: CalculateDeliveryDto,
+  ): Promise<DeliveryOption[]> {
     const results = await Promise.allSettled(
-      this.providers.map((provider) => this.callWithTimeout(provider, calculateDeliveryDto)),
+      this.providers.map((provider) =>
+        this.callWithTimeout(provider, calculateDeliveryDto),
+      ),
     );
 
     const options: DeliveryOption[] = [];
@@ -34,16 +38,26 @@ export class DeliveryService {
     return options;
   }
 
-  private callWithTimeout(provider: DeliveryProvider, dto: CalculateDeliveryDto): Promise<DeliveryOption[]> {
+  private callWithTimeout(
+    provider: DeliveryProvider,
+    dto: CalculateDeliveryDto,
+  ): Promise<DeliveryOption[]> {
     let timerId: ReturnType<typeof setTimeout>;
 
     const timeout = new Promise<never>((_, reject) => {
       timerId = setTimeout(
-        () => reject(new Error(`Provider "${provider.id}" did not respond within ${provider.timeoutMs} ms`)),
+        () =>
+          reject(
+            new Error(
+              `Provider "${provider.id}" did not respond within ${provider.timeoutMs} ms`,
+            ),
+          ),
         provider.timeoutMs,
       );
     });
 
-    return Promise.race([provider.calculate(dto), timeout]).finally(() => clearTimeout(timerId));
+    return Promise.race([provider.calculate(dto), timeout]).finally(() =>
+      clearTimeout(timerId),
+    );
   }
 }

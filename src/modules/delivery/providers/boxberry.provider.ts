@@ -8,8 +8,8 @@ export class MockBoxberryProvider implements DeliveryProvider {
   readonly timeoutMs = 500;
 
   private readonly cityPrices: Record<string, number> = {
-    'Москва': 300,
-    'Казань': 500,
+    Москва: 300,
+    Казань: 500,
   };
 
   private readonly defaultPrice = 700;
@@ -24,7 +24,6 @@ export class MockBoxberryProvider implements DeliveryProvider {
         price,
         currency: 'RUB',
         estimatedDays: { min: 3, max: 5 },
-
       },
     ];
   }
